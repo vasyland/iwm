@@ -1,0 +1,33 @@
+
+h1 {
+    font-size: 3.2rem;
+    font-weight: normal;
+    margin-bottom: 6.8rem;
+}
+
+h1 span {
+    color: #07801E;
+}
+
+.container {
+    display: flex;
+    gap: 2em;
+    width: 100%;
+    height: 400px;
+
+    img {
+        width: 250px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 1em;
+    }
+
+    .second {
+        //align-self: flex-end;
+        flex-grow: 2;
+    }
+
+    .forth {
+        align-self: center;
+    }
+}

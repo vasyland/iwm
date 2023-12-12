@@ -1,0 +1,65 @@
+main {
+  border-radius: 1.1em;
+  box-shadow: 10px 10px 40px rgba(167, 195, 221, 0.49);
+  width: 100%;
+  padding: 3em;
+  position: relative;
+
+  p {
+    margin: 0;
+  }
+
+  .labels {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 3em;
+    display: flex;
+  }
+}
+
+p {
+  font-size: 1rem;
+  color: #697e90;
+  letter-spacing: 0.1rem;
+  flex: 1;
+}
+
+.country {
+  flex-grow: 2;
+}
+
+.stats {
+  font-size: 1.6rem;
+  display: flex;
+}
+
+.stat-ranking {
+  color: black;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.stat-country {
+  font-weight: bold;
+  color: blue;
+  font-size: 1.6rem;
+  flex-grow: 2;
+}
+
+.stat-game {
+  font-size: 1.6rem;
+  color: black;
+}
+
+
+.slanted-box {
+  position: relative;
+  background-color: blue;
+  opacity: 93%;
+  height: 20em;
+  width: 1500em;
+  transform-origin:bottom left;
+  transform:rotate(2deg);
+  z-index: -1;
+  top: 18.2em;
+}

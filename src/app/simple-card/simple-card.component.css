@@ -1,0 +1,46 @@
+article {
+  width: 300px;
+  background: #2F3740;
+  padding: 1.125em;
+  border-radius: 1em;
+  font-family: "Poppins", sans-serif;
+  /**
+   What is the difference between block and inline-block?
+  */
+}
+article img {
+  width: 100%;
+  border-radius: 0.4em;
+}
+article .tag {
+  background: #455260;
+  color: #BEFF00;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.2em 0.6em;
+  border-radius: 0.4em;
+  margin-top: 1em;
+  display: inline-block;
+}
+article h1 {
+  margin-top: 0.6em;
+}
+article h1 a {
+  color: #fff;
+  font-size: 2rem;
+  line-height: 120%;
+}
+article a.cta {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.2em;
+}
+article a.cta svg {
+  margin-left: 0.5em;
+  align-self: center;
+}
+article a.cta p {
+  margin: 0;
+  color: #B1C4D9;
+}/*# sourceMappingURL=simple-card.component.css.map */

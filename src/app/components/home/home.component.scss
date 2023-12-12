@@ -1,0 +1,44 @@
+// * {  outline: 1px solid red !important; }
+
+.bluish-box {
+  max-width: 500px;
+  background-color: #e7eef7;
+  margin: 5em;
+  border-radius: 2em;
+  display: inline-block;
+}
+
+.info-panel {
+  margin: 5em 2em 5em 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+}
+
+.info-panel h1 {
+  font-size: 3.5rem;
+  color: rgb(32, 29, 29);
+  margin-bottom: 0.4em;
+}
+
+.info-panel > p {
+  font-size: 1.5rem;
+  margin-bottom: 2em;
+}
+
+.cta {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+
+.cta .sign-in {
+  font-size: 3rem;
+  text-decoration: none;
+  display: inline-block;
+  background-color: greenyellow;
+  margin-left: 1em;
+  padding: 0.3em 1em;
+  justify-content: center;
+}

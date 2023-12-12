@@ -1,0 +1,45 @@
+header {
+  background-color: aqua;
+  padding: 2.5em;
+}
+header .wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header a.logo {
+  color: blue;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+header nav ul {
+  display: flex;
+  gap: 4.3em;
+}
+header nav ul a {
+  font-size: 1.8rem;
+  color: black;
+}
+header nav ul a.active {
+  font-weight: bold;
+}
+header nav ul a:hover {
+  color: blue;
+}
+header a.cart {
+  background-color: #C3CCD7;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1.8rem;
+  color: black;
+  padding: 1rem;
+  border-radius: 0.2em;
+}
+header a.cart:hover {
+  background-color: #B5C0CE;
+}/*# sourceMappingURL=navigation.component.css.map */

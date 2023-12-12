@@ -1,0 +1,58 @@
+//@import "../styles/variables";
+
+
+article {
+    width: 300px;
+    background: #2F3740;
+    padding: 1.125em;
+    border-radius: 1em;
+    font-family: 'Poppins', sans-serif;
+
+    img {
+        width: 100%;
+        border-radius: .4em;
+    }
+
+    .tag {
+        background: #455260;
+        color: #BEFF00;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: .2em .6em;
+        border-radius: .4em;
+        margin-top: 1em;
+        display: inline-block;
+    }
+
+/**
+ What is the difference between block and inline-block?
+*/
+
+    h1 {
+        margin-top: .6em;
+    }
+
+    h1 a {
+        color: #fff;
+        font-size: 2rem;
+        line-height: 120%;
+        
+    }
+
+    a.cta {
+        color: #fff;
+        display: flex;
+        flex-direction: row;
+        margin-top: 1.2em;
+
+        svg {
+            margin-left: .5em;
+            align-self: center;
+        }
+    }
+
+    a.cta p {
+        margin: 0;
+        color: #B1C4D9;
+    }
+}
