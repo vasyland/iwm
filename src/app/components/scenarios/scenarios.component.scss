@@ -1,0 +1,45 @@
+
+
+section {
+    margin: 2rem;
+}
+
+h1.scenario-title {
+    font-family: Roboto;
+    color: red;
+    letter-spacing: .5rem;
+    margin: .2em 2em;
+}
+
+
+.scenario-tbl {
+    padding: .5em 1em;
+    
+}
+
+.loser {
+    color: var(--loser-color);
+}
+
+.input-legend {
+    color: red;
+    margin: 0;
+    text-align: left;
+    padding-right: .3em;
+    font-size: 1.6rem;
+    border: 1px solid blue;
+}
+
+
+
+li.invested-amount {
+    list-style:none;
+}
+
+.rating-up {
+   display: none;
+}
+
+.rating-down {
+    display: inline-block;
+}

@@ -1,8 +1,83 @@
 <section>
-    <div class="scenario-tbl">
-        <ul>
-            <li *ngFor="let c of scenarios">{{ c }}</li>
-        </ul>
-    </div>
-</section>
+  <h1 [textContent]="title" class="scenario-title"></h1>
+  <div class="scenario-tbl">
+    <ul>
+      <li *ngFor="let c of scenarios" [class.loser]="isLoser" class="invested-amount">{{ c.investedAmount | number:'1.2' }}</li>
+    </ul>
+  </div>
+  <div (click)="onDivClicked()">
+    <button (click)="onSave($event)" [style.background]="isLoser ? '#cce6ff' : '#4dff4d'">Save</button>
+  </div>
+  <div>
+    <label for="f1" class="input-legend">Event Filtering</label>
+    <input type="text" id="f1" (keyup.enter)="onKeyGetValue($event)" />
+  </div>
+  <div>
+    <label for="email">E-mail:</label>
+      <input id="email" #email type="text" (keyup.enter)="onKeyEmail(email.value)" />
+  </div>
+  <div>
+    <label for="address">Address:</label>
+      <input id="address" [(ngModel)]="address" (keyup.enter)="onKeyAddress()" />
+  </div>
+  
+  <span [class.rating-up]="!isFavorite1"
+  [class.rating-down]="isFavorite1"
+  (click)="onFavorite1Click()">
+    <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 5.33331L38.8854 23.8746L58.6667 24.6853L43.1414 36.9573L48.48 56L32 45.0426L15.52 56L20.8587 36.9573L5.33337 24.6853L25.1147 23.8746L32 5.33331Z" fill="#FFCE31"/>
+      </svg>
+  </span>
+  <span 
+  [class.rating-up]="isFavorite1"
+  [class.rating-down]="!isFavorite1"
+  (click)="onFavorite1Click()"
+  >
+    <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 16.8213L35.136 25.2666L36.0614 27.7626L38.72 27.872L47.7174 28.2426L40.6587 33.8213L38.568 35.4746L39.288 38.04L41.7174 46.704L34.2134 41.7146L32 40.24L29.7867 41.712L22.2827 46.7013L24.712 38.0373L25.432 35.472L23.3414 33.8186L16.28 28.24L25.2774 27.8693L27.936 27.76L28.8614 25.264L32 16.8213ZM32 5.33331L25.1147 23.8746L5.33337 24.6853L20.8587 36.9573L15.52 56L32 45.0426L48.48 56L43.1414 36.9573L58.6667 24.6853L38.8854 23.872L32 5.33331Z" fill="#FFCE31"/>
+      </svg>
+  </span>
+  <span [class.rating-up]="!isFavorite2" [class.rating-down]="isFavorite2" (click)="onFavorite2Click()">
+    <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 5.33331L38.8854 23.8746L58.6667 24.6853L43.1414 36.9573L48.48 56L32 45.0426L15.52 56L20.8587 36.9573L5.33337 24.6853L25.1147 23.8746L32 5.33331Z" fill="#FFCE31"/>
+      </svg>
+  </span>
+  <span [class.rating-up]="isFavorite2" [class.rating-down]="!isFavorite2" (click)="onFavorite2Click()">
+    <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 16.8213L35.136 25.2666L36.0614 27.7626L38.72 27.872L47.7174 28.2426L40.6587 33.8213L38.568 35.4746L39.288 38.04L41.7174 46.704L34.2134 41.7146L32 40.24L29.7867 41.712L22.2827 46.7013L24.712 38.0373L25.432 35.472L23.3414 33.8186L16.28 28.24L25.2774 27.8693L27.936 27.76L28.8614 25.264L32 16.8213ZM32 5.33331L25.1147 23.8746L5.33337 24.6853L20.8587 36.9573L15.52 56L32 45.0426L48.48 56L43.1414 36.9573L58.6667 24.6853L38.8854 23.872L32 5.33331Z" fill="#FFCE31"/>
+      </svg>
+  </span>
 
+  <span [class.rating-up]="!isFavorite3" [class.rating-down]="isFavorite3" (click)="onFavorite3Click()">
+    <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 5.33331L38.8854 23.8746L58.6667 24.6853L43.1414 36.9573L48.48 56L32 45.0426L15.52 56L20.8587 36.9573L5.33337 24.6853L25.1147 23.8746L32 5.33331Z" fill="#FFCE31"/>
+      </svg>
+  </span>
+  <span [class.rating-up]="isFavorite3" [class.rating-down]="!isFavorite3" (click)="onFavorite3Click()">
+    <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 16.8213L35.136 25.2666L36.0614 27.7626L38.72 27.872L47.7174 28.2426L40.6587 33.8213L38.568 35.4746L39.288 38.04L41.7174 46.704L34.2134 41.7146L32 40.24L29.7867 41.712L22.2827 46.7013L24.712 38.0373L25.432 35.472L23.3414 33.8186L16.28 28.24L25.2774 27.8693L27.936 27.76L28.8614 25.264L32 16.8213ZM32 5.33331L25.1147 23.8746L5.33337 24.6853L20.8587 36.9573L15.52 56L32 45.0426L48.48 56L43.1414 36.9573L58.6667 24.6853L38.8854 23.872L32 5.33331Z" fill="#FFCE31"/>
+      </svg>
+  </span>
+  
+  <span [class.rating-up]="!isFavorite4" [class.rating-down]="isFavorite4" (click)="onFavorite4Click()">
+    <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 5.33331L38.8854 23.8746L58.6667 24.6853L43.1414 36.9573L48.48 56L32 45.0426L15.52 56L20.8587 36.9573L5.33337 24.6853L25.1147 23.8746L32 5.33331Z" fill="#FFCE31"/>
+      </svg>
+  </span>
+  <span [class.rating-up]="isFavorite4" [class.rating-down]="!isFavorite4" (click)="onFavorite4Click()">
+    <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 16.8213L35.136 25.2666L36.0614 27.7626L38.72 27.872L47.7174 28.2426L40.6587 33.8213L38.568 35.4746L39.288 38.04L41.7174 46.704L34.2134 41.7146L32 40.24L29.7867 41.712L22.2827 46.7013L24.712 38.0373L25.432 35.472L23.3414 33.8186L16.28 28.24L25.2774 27.8693L27.936 27.76L28.8614 25.264L32 16.8213ZM32 5.33331L25.1147 23.8746L5.33337 24.6853L20.8587 36.9573L15.52 56L32 45.0426L48.48 56L43.1414 36.9573L58.6667 24.6853L38.8854 23.872L32 5.33331Z" fill="#FFCE31"/>
+      </svg>
+  </span>
+
+  <span [class.rating-up]="!isFavorite5" [class.rating-down]="isFavorite5" (click)="onFavorite5Click()">
+    <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 5.33331L38.8854 23.8746L58.6667 24.6853L43.1414 36.9573L48.48 56L32 45.0426L15.52 56L20.8587 36.9573L5.33337 24.6853L25.1147 23.8746L32 5.33331Z" fill="#FFCE31"/>
+      </svg>
+  </span>
+  <span [class.rating-up]="isFavorite5" [class.rating-down]="!isFavorite5" (click)="onFavorite5Click()">
+    <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 16.8213L35.136 25.2666L36.0614 27.7626L38.72 27.872L47.7174 28.2426L40.6587 33.8213L38.568 35.4746L39.288 38.04L41.7174 46.704L34.2134 41.7146L32 40.24L29.7867 41.712L22.2827 46.7013L24.712 38.0373L25.432 35.472L23.3414 33.8186L16.28 28.24L25.2774 27.8693L27.936 27.76L28.8614 25.264L32 16.8213ZM32 5.33331L25.1147 23.8746L5.33337 24.6853L20.8587 36.9573L15.52 56L32 45.0426L48.48 56L43.1414 36.9573L58.6667 24.6853L38.8854 23.872L32 5.33331Z" fill="#FFCE31"/>
+      </svg>
+  </span>
+</section>

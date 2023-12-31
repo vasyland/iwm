@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,11 @@ import { FlexLatestNewsComponent } from './components/flex-latest-news/flex-late
 import { CountryRatingComponent } from './components/country-rating/country-rating.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { DrumComponent } from './components/drum/drum.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { UserScenarioService } from './services/user-scenario.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,9 +36,14 @@ import { DrumComponent } from './components/drum/drum.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
-  providers: [SymbolStateBuyListService],
+  providers: [SymbolStateBuyListService, BuyListComponent, UserScenarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

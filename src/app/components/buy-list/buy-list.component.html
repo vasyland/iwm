@@ -15,12 +15,12 @@
                </thead>
                <tbody>
                   <tr *ngFor="let s of buySymbolData">
-                     <td class="buy-list-symbol">{{s.symbol}}</td>
-                     <td class="price">{{s.currentPrice}}</td>
-                     <td class="yield">{{s.currentYield}}</td>
-                     <td class="upper-yield">{{s.upperYield}}</td>
-                     <td class="buy-price">{{s.allowedBuyPrice}}</td>
-                     <td class="best-buy-price">{{s.bestBuyPrice}}</td>
+                     <td class="buy-list-symbol">{{s.symbol | uppercase}}</td>
+                     <td class="price">{{s.currentPrice | number:'1.2-3' }}</td>
+                     <td class="yield">{{s.currentYield | number:'1.2-3' }}</td>
+                     <td class="upper-yield">{{s.upperYield | number:'1.2-4' }}</td>
+                     <td class="buy-price">{{s.allowedBuyPrice | number:'1.2' }}</td>
+                     <td class="best-buy-price">{{s.bestBuyPrice | number:'1.2' }}</td>
                   </tr>
                </tbody>
            </table>

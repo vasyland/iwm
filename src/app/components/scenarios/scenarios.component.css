@@ -1,1 +1,31 @@
-/*# sourceMappingURL=scenarios.component.css.map */
+section {
+  margin: 2rem;
+}
+
+h1.scenario-title {
+  font-family: Roboto;
+  color: red;
+  letter-spacing: 0.5rem;
+  margin: 0.2em 2em;
+}
+
+.scenario-tbl {
+  padding: 0.5em 1em;
+}
+
+.loser {
+  color: var(--loser-color);
+}
+
+.input-legend {
+  color: red;
+  margin: 0;
+  text-align: left;
+  padding-right: 0.3em;
+  font-size: 1.6rem;
+  border: 1px solid blue;
+}
+
+li.invested-amount {
+  list-style: none;
+}/*# sourceMappingURL=scenarios.component.css.map */
